@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}crud{% endblock title %}
+{% block main %}<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for st in students %}
+      <tr>
+        <th scope="row">{{st.id}}</th>
+        <td>{{st.name}}</td>
+        <td>{{st.email}}</td>
+        <td>{{st.dob}}</td>
+        <td>{{st.password}}</td>
+        <td><a href={% url "update-page" st.id %}><button type="button" class="btn btn-primary">Edit</button></a></td>
+        <td><a href={% url "delete-page" st.id %}><button type="button" class="btn btn-danger">Delete</button></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href={% url "add-page" %}> <button type="button" class="btn btn-success">Add</button></a>
+
+{% endblock main %}

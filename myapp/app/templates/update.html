@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/css/style.css">
+<title>Title</title>
+
+</head>
+
+<body>
+<form method="POST">
+    {%csrf_token%}
+    <div >
+        <h1>Update Student</h1>
+        <label for="name">Name</label>
+        <input type="text" name="pname" id="name" required value={{student.name}}>
+
+        <label for="em">Email</label>
+        <input type="email" name="email" id="em" required value={{student.email}}>
+
+        <label for="em">DOB</label>
+        <input type="date" name="dob" id="em" required value={{student.dob}}>
+
+        <label for="pass">Password</label>
+        <input type="text" name="pass" id="pass" required value={{student.password}}>
+
+        <button type="submit">Register</button>
+    </div> 
+</form>
+<!-- {% if error %}
+<div class="alert alert-danger m-5" >{{ error }}</div>
+{% endif %}
+{% if success %}
+<div class="alert alert-success m-3">{{ success }}</div>
+{% endif %} -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
